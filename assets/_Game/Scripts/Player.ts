@@ -8,12 +8,25 @@ export default class NewClass extends Character {
     @property(Joystick)
     joystick: Joystick = null;
     
+    private isMoving: boolean;
     onLoad() {
-        
+        this.isMoving = false;
+    }
+
+    move(dt){
+        let direction = this.joystick.direction;
+
+        if(direction.x === 0 && direction.y === 0){
+            this.isMoving = false;
+            return;
+        }
+        if(!this.isMoving){
+            this.isMoving = true;
+        }
     }
     update (dt) {
         let pos = this.node.getPosition();
-        pos.addSelf( this.joystick.jsVector.mul( dt * 3 ) ); 
+        pos.addSelf( this.joystick.direction.mul( dt * 3 ) ); 
         this.node.setPosition(pos);
 
     }
