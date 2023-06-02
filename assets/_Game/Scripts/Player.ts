@@ -3,7 +3,7 @@ import Joystick from "./Joystick"
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends Character {
+export default class Player extends Character {
 
     @property(Joystick)
     joystick: Joystick = null;
@@ -26,7 +26,7 @@ export default class NewClass extends Character {
     }
     update (dt) {
         let pos = this.node.getPosition();
-        pos.addSelf( this.joystick.direction.mul( dt * 3 ) ); 
+        pos.addSelf( this.joystick.direction.mul( dt * 300 ) ); 
         this.node.setPosition(pos);
 
     }

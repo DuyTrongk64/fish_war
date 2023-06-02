@@ -12,7 +12,7 @@ export default class NewClass extends cc.Component {
         let curent_pos = this.node.getPosition();
         
         curent_pos.lerp(target_pos,0.1,curent_pos);
-        curent_pos.y = cc.misc.clampf(target_pos.y,0,1024);
+        curent_pos.y = cc.misc.clampf(curent_pos.y,0,50);
         this.node.setPosition(curent_pos);
     }
 }

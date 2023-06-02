@@ -13,7 +13,7 @@ export default class joystick extends cc.Component {
 
     private isVisible: boolean = false; // tạo biến đánh dấu sự kiện
   
-
+    
 
     onLoad() {
         // Ẩn joystick 
@@ -30,21 +30,19 @@ export default class joystick extends cc.Component {
 
         // Hiển thị joystick tại vị trí click
         
-        const start = event.getLocation(); // lấy tọa độ vị trí chạm trên màn hình bằng event và hàm getLocation
+        const start = event.getLocation(); 
         const camera = cc.Camera.main; // Thay thế bằng camera chính 
         const posCamera = camera.getScreenToWorldPoint(start); //chuyển đổi tọa độ chạm chuột từ không gian màn hình sang không gian camera trước khi sử dụng
         const posStart = this.node.parent.convertToNodeSpaceAR(posCamera); // chuyển đổi vị trí chạm trên màn hình camera sang tọa độ nút cha của joystick
-        this.node.setPosition(posStart); // hiển thị joystick tại vị trí chạm
-        this.stick.setPosition(cc.v2(0, 0)); // dưa stick về vị trí gốc (0,0)
-        this.direction = cc.v2(0, 0); // đưa hướng joystick về hướng không di chuyển
-
-    
-        this.isVisible = true; // đánh dấu joystick hiển thị
-        this.node.active = true; // hiện joystick lên   
+        this.node.setPosition(posStart); 
+        this.stick.setPosition(cc.v2(0, 0));
+        this.direction = cc.v2(0, 0); 
+        this.isVisible = true; 
+        this.node.active = true; 
     }
     
     
-    private on_stick_move(event: cc.Touch) { // sự kiện di chuyển joystick
+    private on_stick_move(event: cc.Touch) {
       
         const move = event.getLocation();
         const camera = cc.Camera.main;
@@ -54,30 +52,27 @@ export default class joystick extends cc.Component {
 
 
         const len = pos.mag(); // tính độ dài của pos rồi lưu vào len
-        if(len <= 0){          // nếu joytick không di chuyển
-            this.stick.setPosition(pos); // thì stick được đặt ở vị trí pos
+        if(len <= 0){         
+            this.stick.setPosition(pos);
             return
         }
-        this.direction.x = pos.x / len; // tạo hướng di chuyển theo trục x
-        this.direction.y = pos.y / len; // tạo hướng di chuyển theo trục y
+        this.direction.x = pos.x / len; 
+        this.direction.y = pos.y / len; 
 
-        if(len > this.max_r){     // nếu độ dài của vecto pos lớn hơn bán kính cho phép max_r
-            pos.x = pos.x * this.max_r / len; // 
-            pos.y = pos.y * this.max_r / len; // thu nhỏ vị trí của joystick theo tỷ lệ để stick không vượt quá bán kính tối đa
+        if(len > this.max_r){     
+            pos.x = pos.x * this.max_r / len; 
+            pos.y = pos.y * this.max_r / len; 
         }
-        this.stick.setPosition(pos); // đặt giá trị stick theo pos
+        this.stick.setPosition(pos);
        
     }
 
-///
-
-
-    private on_stick_end(event: cc.Touch) { // event khi kết thúc sự kiện click
+    private on_stick_end(event: cc.Touch) {
  
-        this.stick.setPosition(cc.v2(0, 0)); // dưa stick về vị trí gốc (0,0)
-        this.direction = cc.v2(0, 0); // đưa hướng joystick về hướng không di chuyển
-        this.isVisible = false; // đánh dấu joystick ẩn
-        this.node.active = false; // ẩn joystick
+        this.stick.setPosition(cc.v2(0, 0));
+        this.direction = cc.v2(0, 0); 
+        this.isVisible = false; 
+        this.node.active = false;
     }
 
 }
