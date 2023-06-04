@@ -1,32 +1,38 @@
+import Utilities from "./Utilities";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class joystick extends cc.Component {
 
     @property(cc.Node)
-    stick: cc.Node = null; // khai báo biến stick
+    stick: cc.Node = null;
 
     @property
-    max_r: number = 200; // tạo bán kính tối đa cua joystick
+    max_r: number = 0;
     
-    public direction: cc.Vec2 = cc.v2(0 , 0); // tạo hướng vecto di chuyển
+    public direction: cc.Vec2 = cc.v2(0 , 0);
 
-    private isVisible: boolean = false; // tạo biến đánh dấu sự kiện
+    private joystickStartPosition: cc.Vec2;
+
+    public joystickAngle: number;
+
+    private isActive: boolean;
   
     
 
     onLoad() {
         // Ẩn joystick 
         this.node.active = false;
-
-        /// tạo event toch tại nút cha (this.node.parent)
+        this.isActive = false;
+        
         this.node.parent.on(cc.Node.EventType.TOUCH_START, this.on_stick_start, this);
         this.node.parent.on(cc.Node.EventType.TOUCH_MOVE, this.on_stick_move, this);
-        this.node.parent.on(cc.Node.EventType.TOUCH_END, this.on_stick_end, this); // TOUCH_END = TOUCH_CANCEL 
+        this.node.parent.on(cc.Node.EventType.TOUCH_END, this.on_stick_end, this);
         this.node.parent.on(cc.Node.EventType.TOUCH_CANCEL, this.on_stick_end, this);
     }
     
-    private on_stick_start(event: cc.Touch) {  // sự kiện chạm vào joystick
+    private on_stick_start(event: cc.Touch) {
 
         // Hiển thị joystick tại vị trí click
         
@@ -37,7 +43,7 @@ export default class joystick extends cc.Component {
         this.node.setPosition(posStart); 
         this.stick.setPosition(cc.v2(0, 0));
         this.direction = cc.v2(0, 0); 
-        this.isVisible = true; 
+        this.isActive = true; 
         this.node.active = true; 
     }
     
@@ -49,8 +55,17 @@ export default class joystick extends cc.Component {
         const posCamera_move = camera.getScreenToWorldPoint(move);
         const pos = this.node.convertToNodeSpaceAR(posCamera_move);
 
+        // if (!this.isActive) {
+        //     this.isActive = true;
+            
+        //     this.joystickStartPosition = Utilities.vec3ToVec2(pos);
+        // }
 
+        // // xoay
+        // let joystickDelta = pos.subtract(Utilities.vec2ToVec3(this.joystickStartPosition));
+        // this.joystickAngle = joystickDelta.signAngle(new cc.Vec2(1, 0));
 
+        //di chuyen
         const len = pos.mag(); // tính độ dài của pos rồi lưu vào len
         if(len <= 0){         
             this.stick.setPosition(pos);
@@ -71,7 +86,7 @@ export default class joystick extends cc.Component {
  
         this.stick.setPosition(cc.v2(0, 0));
         this.direction = cc.v2(0, 0); 
-        this.isVisible = false; 
+        this.isActive = false; 
         this.node.active = false;
     }
 
