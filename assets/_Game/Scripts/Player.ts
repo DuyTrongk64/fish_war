@@ -11,6 +11,7 @@ export default class Player extends Character {
     @property
     speed: number = 0;
 
+
     private isMoving: boolean;
 
     onLoad() {
@@ -38,10 +39,11 @@ export default class Player extends Character {
         let posX = this.speed* dt * direction.x; // tính toán giá trị di chuyển theo phương x 
         let posY = this.speed* dt * direction.y; // tính toán giá trị di chuyển theo phương y
 
+        
         if (posX > 0){ // quay Player theo hướng di chuyển.
-            this.node.setScale(0.5, 0.5)}
+            this.node.setScale(0.3, 0.3)}
         else{
-            this.node.setScale(0.5, -0.5)}
+            this.node.setScale(0.3, -0.3)}
 
         this.node.x += posX; //  cập nhật giá trị tọa độ x để di chuyển theo phương x.
         this.node.y += posY; //  cập nhật giá trị tọa độ y để di chuyển theo phương y.
@@ -49,10 +51,10 @@ export default class Player extends Character {
 
         // va chạm khung hình 
         
-        let minX = -cc.winSize.width / 2.3; //cc.winSize.width : chiều rộng cửa sổ trò chơi
-        let maxX = cc.winSize.width / 2.3;
-        let minY = -cc.winSize.height / 2.5; // winSize.height : chiều cao cửa sổ trò  chơi
-        let maxY = cc.winSize.height / 3;
+        const minX = -cc.winSize.width / 2.1; 
+        const maxX = cc.winSize.width / 2.1;
+        const minY = -cc.winSize.height / 2.7;
+        const maxY = cc.winSize.height / 3.5;
 
         if (this.node.x < minX) { // nếu tọa độ x của player < minx
             this.node.x = minX; // => tọa độ x = minx
@@ -67,6 +69,8 @@ export default class Player extends Character {
         }
  
     }
+
+    
     update (dt) {
         this.move(dt);
     }
