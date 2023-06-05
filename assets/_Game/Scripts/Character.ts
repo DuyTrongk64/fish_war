@@ -1,7 +1,7 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class Character extends cc.Component {
 
     
     //khởi tạo
@@ -9,7 +9,7 @@ export default class NewClass extends cc.Component {
         
     }
 
-    protected onDeath(){
+    public onDeath(){
         
     }
 
