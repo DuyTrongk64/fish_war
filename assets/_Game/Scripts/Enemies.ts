@@ -10,21 +10,23 @@ export default class NewClass extends cc.Component {
     bone: cc.Prefab;
 
     protected onDeath(){
-        let block1: cc.Node|null = null;
+        // let block1: cc.Node|null = null;
 
-        block1 = cc.instantiate(this.meat);
+        // block1 = cc.instantiate(this.meat);
 
-        this.node.addChild(block1);
+        // this.node.addChild(block1);
 
-        block1.setPosition(this.node.getPosition());
+        // block1.setPosition(this.node.getPosition());
 
-        let block2: cc.Node|null = null;
+        // let block2: cc.Node|null = null;
 
-        block2 = cc.instantiate(this.bone);
+        // block2 = cc.instantiate(this.bone);
 
-        this.node.addChild(block2);
+        // this.node.addChild(block2);
 
-        block2.setPosition(this.node.getPosition());
+        // block2.setPosition(this.node.getPosition());
+
+        console.log('die');
     }
 
 
