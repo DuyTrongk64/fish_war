@@ -1,7 +1,9 @@
+import Character from "./Character";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class Enemies extends Character {
 
     @property(cc.Prefab)
     meat: cc.Prefab;
@@ -9,24 +11,25 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     bone: cc.Prefab;
 
-    protected onDeath(){
-        // let block1: cc.Node|null = null;
+    public onDeath(){
+        this.node.destroy();
 
-        // block1 = cc.instantiate(this.meat);
+        let block1: cc.Node|null = null;
 
-        // this.node.addChild(block1);
+        block1 = cc.instantiate(this.meat);
 
-        // block1.setPosition(this.node.getPosition());
+        this.node.parent.addChild(block1);
 
-        // let block2: cc.Node|null = null;
+        block1.setPosition(this.node.getPosition());
 
-        // block2 = cc.instantiate(this.bone);
+        let block2: cc.Node|null = null;
 
-        // this.node.addChild(block2);
+        block2 = cc.instantiate(this.bone);
 
-        // block2.setPosition(this.node.getPosition());
+        this.node.parent.addChild(block2);
 
-        console.log('die');
+        block2.setPosition(this.node.getPosition());
+
     }
 
 
