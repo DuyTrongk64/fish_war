@@ -19,7 +19,12 @@ export default class Player extends Character {
         
     }
 
-    public onDeath(){
+    public onHit(){
+        super.onHit();
+    }
+
+    protected onDeath(){
+        super.onDeath();
         console.log("player dead");
         this.node.destroy();
     }

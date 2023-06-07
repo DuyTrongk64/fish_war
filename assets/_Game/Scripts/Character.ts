@@ -9,7 +9,11 @@ export default class Character extends cc.Component {
         
     }
 
-    public onDeath(){
+    public onHit(){
+        this.onDeath(); 
+    }
+
+    protected onDeath(){
         
     }
 

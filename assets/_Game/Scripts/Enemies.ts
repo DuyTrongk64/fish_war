@@ -11,7 +11,14 @@ export default class Enemies extends Character {
     @property(cc.Prefab)
     bone: cc.Prefab;
 
-    public onDeath(){
+
+    public onHit(){
+        super.onHit();
+    }
+
+    protected onDeath(){
+        
+
         this.node.destroy();
 
         let block1: cc.Node|null = null;
