@@ -13,8 +13,9 @@ export default class Blade extends cc.Component {
     }
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider){
+        console.log(other.node.parent.getComponent(Character)!=null);
         if(other.node.name == 'Body'){
-            other.getComponent(Character).onHit();
+            other.node.parent.getComponent(Character).onHit();
         }
     }
    

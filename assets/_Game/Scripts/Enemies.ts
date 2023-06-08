@@ -6,10 +6,10 @@ const {ccclass, property} = cc._decorator;
 export default class Enemies extends Character {
 
     @property(cc.Prefab)
-    meat: cc.Prefab;
+    meat: cc.Prefab = null;
 
     @property(cc.Prefab)
-    bone: cc.Prefab;
+    bone: cc.Prefab = null;
 
 
     public onHit(){
@@ -18,7 +18,6 @@ export default class Enemies extends Character {
 
     protected onDeath(){
         
-
         this.node.destroy();
 
         let block1: cc.Node|null = null;

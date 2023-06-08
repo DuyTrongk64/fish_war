@@ -8,19 +8,7 @@ export default class NewClass extends cc.Component {
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider){
         if(other.node.name == 'Body'){
-            console.log(other.node.parent.name);
-            console.log(self.name);
-            if(other.node.parent.name == 'Enemy')
-            {
-                this.node.destroy();
-                //other.node.parent.getComponent('Enemies').onDeath();
-            }
-
-            if(other.node.parent.name == 'Player')
-            {
-                this.node.destroy();
-                //other.node.parent.getComponent('Player').onDeath();
-            }
+            this.node.destroy();
         }
     }
 
