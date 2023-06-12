@@ -5,9 +5,8 @@ export enum PoolType {
     None = 0,
     Enemy_1 = 10,
     Enemy_2 = 11,
-    VFX_Explore = 12,
-    VFX_Spark  = 13,
-    Booster  = 14,
+    Meat = 12,
+    Bone  = 13,
 }
 
 @ccclass

@@ -5,7 +5,7 @@ import SimplePool, { PoolType } from "../Pool/SimplePool";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class GameManager extends cc.Component {
 
     @property(Player)
     player: Player = null;
@@ -31,5 +31,9 @@ export default class NewClass extends cc.Component {
             SimplePool.spawnT<Enemies>(PoolType.Enemy_1,ranPos,0);
 
         }
+    }
+
+    start(){
+      this.ranSpawnEnemies();
     }
 }

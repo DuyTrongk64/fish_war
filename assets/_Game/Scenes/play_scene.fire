@@ -97,6 +97,9 @@
       },
       {
         "__id__": 73
+      },
+      {
+        "__id__": 74
       }
     ],
     "_prefab": null,
@@ -150,7 +153,7 @@
   {
     "__type__": "cc.Node",
     "_name": "BG",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 2
     },
@@ -597,7 +600,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Main Camera",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 2
     },
@@ -640,7 +643,7 @@
       "array": [
         0,
         0,
-        1212.4355652982142,
+        309.92206419439543,
         0,
         0,
         0,
@@ -1532,6 +1535,7 @@
       "__id__": 20
     },
     "_enabled": true,
+    "poolType": 0,
     "joystick": {
       "__id__": 17
     },
@@ -2181,11 +2185,15 @@
       "__id__": 34
     },
     "_enabled": true,
+    "poolType": 0,
     "meat": {
       "__uuid__": "797b5fd9-d329-41cd-b057-ac303d0a478e"
     },
     "bone": {
       "__uuid__": "32d07a22-4013-47fe-8b46-f40cd9660333"
+    },
+    "player": {
+      "__id__": 20
     },
     "_id": "11it1hJ59NeamW6HDQ48dE"
   },
@@ -2941,7 +2949,7 @@
     "prefab": {
       "__uuid__": "909b0d03-dcd8-4291-8708-a99ff7065dd4"
     },
-    "amount": 5
+    "amount": 10
   },
   {
     "__type__": "cc.Canvas",
@@ -2986,5 +2994,18 @@
     "_originalWidth": 0,
     "_originalHeight": 0,
     "_id": "2bC2YwuAVG2KgpCH/1Mp3K"
+  },
+  {
+    "__type__": "6c169hlnr5O17jTSWEKCl7a",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "player": {
+      "__id__": 33
+    },
+    "_id": "6dwn5At5tFx4SuhNS+Hbkh"
   }
 ]

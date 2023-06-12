@@ -1,5 +1,5 @@
 import Character from "./Character";
-
+import SimplePool, { PoolType } from "./Pool/SimplePool";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -11,6 +11,8 @@ export default class Enemies extends Character {
     @property(cc.Prefab)
     bone: cc.Prefab = null;
 
+    @property(cc.Node)
+    player: cc.Node = null;
 
     public onHit(){
         super.onHit();
@@ -39,5 +41,13 @@ export default class Enemies extends Character {
     }
 
 
+    moveToPlayer(){
+        let playerPos = this.player.getWorldPosition();
+        console.log('11111');
+    }
+
+    start(){
+        this.moveToPlayer();
+    }
     update (dt) {}
 }
