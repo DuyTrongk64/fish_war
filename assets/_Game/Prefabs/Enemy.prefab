@@ -247,7 +247,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "f7d7cf39-4a72-4726-9ef8-39d06e8b5a13"
     },
     "fileId": "bcQa2PrB1PHZ0xBG78SGyI",
     "sync": false
@@ -354,7 +354,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "f7d7cf39-4a72-4726-9ef8-39d06e8b5a13"
     },
     "fileId": "89hr0NuwNME6XvSiSravwr",
     "sync": false
@@ -532,7 +532,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "f7d7cf39-4a72-4726-9ef8-39d06e8b5a13"
     },
     "fileId": "fbQGu26clJAKd7pDxLhNAF",
     "sync": false
@@ -639,7 +639,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "f7d7cf39-4a72-4726-9ef8-39d06e8b5a13"
     },
     "fileId": "c2V0OAVlhAyIvEuRzcsHUd",
     "sync": false
@@ -652,12 +652,14 @@
       "__id__": 1
     },
     "_enabled": true,
+    "poolType": 10,
     "meat": {
-      "__uuid__": "797b5fd9-d329-41cd-b057-ac303d0a478e"
+      "__uuid__": "19f1efe8-bd72-4a66-881c-c02a06136c5c"
     },
     "bone": {
-      "__uuid__": "32d07a22-4013-47fe-8b46-f40cd9660333"
+      "__uuid__": "bafb698b-c55f-45b9-bb82-b33cde0346c1"
     },
+    "player": null,
     "_id": ""
   },
   {
@@ -666,7 +668,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "f7d7cf39-4a72-4726-9ef8-39d06e8b5a13"
     },
     "fileId": "",
     "sync": false

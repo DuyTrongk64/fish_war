@@ -18,6 +18,10 @@ export default class Enemies extends Character {
         super.onHit();
     }
 
+    protected onLoad(){
+        this.player = cc.find("./Player");
+    }
+
     protected onDeath(){
         
         this.node.destroy();
@@ -42,7 +46,7 @@ export default class Enemies extends Character {
 
 
     moveToPlayer(){
-        let playerPos = this.player.getWorldPosition();
+        //let playerPos = this.player.getWorldPosition();
         console.log('11111');
     }
 

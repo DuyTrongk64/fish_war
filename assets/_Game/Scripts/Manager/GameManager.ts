@@ -27,7 +27,7 @@ export default class GameManager extends cc.Component {
     public ranSpawnEnemies(){
         for(let i=0; i<5;i++){
             let plWorldPos = this.player.node.getWorldPosition();
-            let ranPos = new cc.Vec3(this.getRandomInt(plWorldPos.x+50,plWorldPos.x+100),this.getRandomInt(plWorldPos.y+50,plWorldPos.x+100),0)
+            let ranPos = new cc.Vec3(this.getRandomInt(plWorldPos.x+50,plWorldPos.y+70),this.getRandomInt(plWorldPos.y+50,plWorldPos.x+70),0)
             SimplePool.spawnT<Enemies>(PoolType.Enemy_1,ranPos,0);
 
         }

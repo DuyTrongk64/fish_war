@@ -1,3 +1,5 @@
+import PoolControl from "./Pool/PoolControl";
+import PoolMember from "./Pool/PoolMember";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
