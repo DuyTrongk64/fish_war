@@ -1,6 +1,6 @@
 import PoolControl from "./Pool/PoolControl";
 import PoolMember from "./Pool/PoolMember";
-
+import GameManager from "./Manager/GameManager";
 const {ccclass, property} = cc._decorator;
 
 @ccclass

@@ -9,11 +9,11 @@ export default class Blade extends cc.Component {
         // Enable Collision System
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;
-        //manager.enabledDebugDraw = true;
+        manager.enabledDebugDraw = true;
     }
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider){
-        console.log(other.node.parent.getComponent(Character)!=null);
+        //console.log(other.node.parent.getComponent(Character)!=null);
         if(other.node.name == 'Body'){
             other.node.parent.getComponent(Character).onHit();
         }
