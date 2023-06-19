@@ -25,7 +25,7 @@ export default class Enemies extends Character {
 
     protected onLoad() {
         this.player = GameManager.Ins.player;
-        console.log(`this.player is null?: ${this.player == null}`);
+        //console.log(`this.player is null?: ${this.player == null}`);
 
         this.startPosition = this.node.position; // Đặt điểm bắt đầu là vị trí hiện tại Enemy
         this.targetPosition = this.player.node.position; // Đặt điểm đến là vị trí của player
@@ -33,9 +33,11 @@ export default class Enemies extends Character {
     }
 
     protected onDeath() {
-        SimplePool.spawn(PoolType.Meat, this.node.getWorldPosition(), 0)
-        SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0)
+        SimplePool.spawn(PoolType.Meat1, this.node.getWorldPosition(), 0);
+        SimplePool.spawn(PoolType.Meat2, this.node.getWorldPosition(), 0);
+        SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0);
         SimplePool.despawn(this);
+        this.node.destroy();
     }
 
     protected update(dt: number) {

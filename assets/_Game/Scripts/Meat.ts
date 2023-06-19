@@ -10,10 +10,10 @@ export default class Meat extends PoolMember {
     downSpeed: number = 0;
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider){
-        console.log(other.name);
-        // if(other.node.name == 'Body'){
-        //     SimplePool.despawn(this); 
-        // }
+        //console.log(other.name);
+        if(other.node.name == 'Body'){
+            SimplePool.despawn(this); 
+        }
     }
 
     update (dt) {

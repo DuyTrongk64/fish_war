@@ -26,7 +26,7 @@ export default class Player extends Character {
     protected onDeath(){
         super.onDeath();
         console.log("player dead");
-        this.node.destroy();
+        //this.node.destroy();
     }
     move(dt){
         let direction = this.joystick.direction; // Lấy vector hướng từ direction của joystick

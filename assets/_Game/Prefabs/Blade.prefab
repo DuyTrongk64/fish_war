@@ -13,11 +13,11 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Bone",
+    "_name": "Blade",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 2
@@ -42,20 +42,20 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 338,
-      "height": 224
+      "width": 365,
+      "height": 47
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 0,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -154.954,
-        13.548,
+        267.67,
+        46.92,
         0,
         0,
         0,
@@ -75,8 +75,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 2,
+    "groupIndex": 2,
     "_id": ""
   },
   {
@@ -95,7 +95,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "e5af1cbf-6916-47c0-a250-3e933f571683"
+      "__uuid__": "6d0eebc8-e13f-41a2-b425-6dcccff4c87a"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -112,35 +112,62 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Animation",
+    "__type__": "cc.PolygonCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "_defaultClip": {
-      "__uuid__": "880333ee-05f0-460a-91bd-b6b75cb7452b"
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 180.7,
+      "y": 0
     },
-    "_clips": [
+    "points": [
       {
-        "__uuid__": "880333ee-05f0-460a-91bd-b6b75cb7452b"
+        "__type__": "cc.Vec2",
+        "x": -157,
+        "y": -17.7
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 140.33,
+        "y": -16.83
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 161.41,
+        "y": -3.79
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 179.25,
+        "y": 14.25
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 183.33,
+        "y": 23.22
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -156.7,
+        "y": 16.4
       }
     ],
-    "playOnLoad": true,
     "_id": ""
   },
   {
-    "__type__": "977ebnRIGlF6JWXfMAoqPhR",
+    "__type__": "5526cgFDK1AOab5unokSpRq",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "poolType": 14,
-    "upSpeed": 500,
-    "timer": 0,
+    "poolType": 2,
     "_id": ""
   },
   {
@@ -149,7 +176,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "feb14adb-6bb0-4e79-bbe5-a0ecb04918df"
+      "__uuid__": "03ccfcab-f545-4d2a-9d39-64c236b33b65"
     },
     "fileId": "",
     "sync": false
