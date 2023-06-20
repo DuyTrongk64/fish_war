@@ -31,10 +31,13 @@
     "_components": [
       {
         "__id__": 12
+      },
+      {
+        "__id__": 13
       }
     ],
     "_prefab": {
-      "__id__": 13
+      "__id__": 14
     },
     "_opacity": 255,
     "_color": {
@@ -65,8 +68,8 @@
         0,
         0,
         1,
-        0.3,
-        0.3,
+        1,
+        1,
         1
       ]
     },
@@ -484,6 +487,25 @@
     },
     "_enabled": true,
     "poolType": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": {
+      "__uuid__": "c918212b-4bab-4a43-be8d-c80e7f11b527"
+    },
+    "_clips": [
+      {
+        "__uuid__": "c918212b-4bab-4a43-be8d-c80e7f11b527"
+      }
+    ],
+    "playOnLoad": true,
     "_id": ""
   },
   {

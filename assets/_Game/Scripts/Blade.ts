@@ -10,6 +10,7 @@ const {ccclass, property} = cc._decorator;
 export default class Blade extends PoolMember {
 
     onLoad() {
+        this.node.zIndex = 0;
         // Enable Collision System
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;

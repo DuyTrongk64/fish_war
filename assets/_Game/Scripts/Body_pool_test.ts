@@ -5,8 +5,8 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class NewClass extends PoolMember {
 
-    start () {
-
+    onLoad(){
+        this.node.zIndex = 3;
     }
 
     

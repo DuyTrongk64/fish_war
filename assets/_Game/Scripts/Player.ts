@@ -1,5 +1,6 @@
 import Character from "./Character";
 import Joystick from "./Joystick"
+import SimplePool, { PoolType } from "./Pool/SimplePool";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -12,7 +13,15 @@ export default class Player extends Character {
     speed: number = 0;
 
 
+    @property(cc.Node)
+    Blade: cc.Node = null;
+
     private isMoving: boolean;
+
+    start () {
+        SimplePool.spawn(PoolType.Blade, this.Blade.getWorldPosition(), 0);
+        SimplePool.spawn(PoolType.Body, this.node.getWorldPosition(), 0);
+    }
 
     onLoad() {
         this.isMoving = false;

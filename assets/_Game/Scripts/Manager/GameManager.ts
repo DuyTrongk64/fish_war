@@ -1,6 +1,7 @@
 import Character from "../Character";
 import Enemies from "../Enemies";
 import Player from "../Player";
+import Test_player from "../Test_player";
 import SimplePool, { PoolType } from "../Pool/SimplePool";
 const { ccclass, property } = cc._decorator;
 
@@ -16,8 +17,11 @@ export default class GameManager extends cc.Component {
   protected onLoad(): void {
     GameManager.ins = this;
   }
+
   @property(Player)
   player: Player = null;
+
+  
 
   //@property(cc.Node)
 
