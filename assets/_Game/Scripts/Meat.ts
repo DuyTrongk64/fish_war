@@ -1,3 +1,5 @@
+import Character from './Character'
+import CacheComponent from "./CacheComponent";
 import PoolControl from "./Pool/PoolControl";
 import PoolMember from "./Pool/PoolMember";
 import SimplePool from "./Pool/SimplePool";
@@ -12,7 +14,13 @@ export default class Meat extends PoolMember {
     onCollisionEnter(other: cc.Collider, self: cc.Collider){
         //console.log(other.name);
         if(other.node.name == 'Body'){
-            SimplePool.despawn(this); 
+            SimplePool.despawn(this);
+            if(other.node.name == 'Body'){
+                if(other.node.parent.name == 'Body')
+                other.node.parent.parent.getComponent(Character).onEat();
+                else
+                other.node.parent.getComponent(Character).onEat();
+            } 
         }
     }
 

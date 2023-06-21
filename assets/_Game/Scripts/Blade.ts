@@ -18,8 +18,11 @@ export default class Blade extends PoolMember {
     }
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider){
-        //console.log(other.node.parent.getComponent(Character)!=null);
+        //console.log(`start: ${other.node.parent.parent.name}`);
         if(other.node.name == 'Body'){
+            if(other.node.parent.name == 'Body')
+            other.node.parent.parent.getComponent(Character).onHit();
+            else
             other.node.parent.getComponent(Character).onHit();
         }
     }

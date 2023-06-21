@@ -40,6 +40,14 @@ export default class Enemies extends Character {
         this.node.destroy();
     }
 
+    public onEat(){
+        super.onEat();
+    }
+
+    protected eatFood(){
+        
+    }
+
     protected update(dt: number) {
         const direction = this.targetPosition.sub(this.node.position); // Tính toán vector hướng từ vị trí hiện tại đến điểm đến
         const normalizedDirection = direction.normalize();// Chuẩn hóa vector hướng

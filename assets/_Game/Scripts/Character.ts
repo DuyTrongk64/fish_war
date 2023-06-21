@@ -20,5 +20,12 @@ export default class Character extends PoolMember {
         
     }
 
+    public onEat(){
+        this.eatFood();
+    }
+
+    protected eatFood(){
+
+    }
     
 }

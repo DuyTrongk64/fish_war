@@ -1,5 +1,6 @@
 import Character from "./Character";
 import Joystick from "./Joystick"
+import PoolMember from "./Pool/PoolMember";
 import SimplePool, { PoolType } from "./Pool/SimplePool";
 const {ccclass, property} = cc._decorator;
 
@@ -12,20 +13,22 @@ export default class Player extends Character {
     @property
     speed: number = 0;
 
-
     @property(cc.Node)
     Blade: cc.Node = null;
 
+    private blade: PoolMember;
+    private fish: PoolMember;
     private isMoving: boolean;
+    private point: number;
 
     start () {
-        SimplePool.spawn(PoolType.Blade, this.Blade.getWorldPosition(), 0);
-        SimplePool.spawn(PoolType.Body, this.node.getWorldPosition(), 0);
+        this.blade = SimplePool.spawn(PoolType.Blade, this.Blade.getWorldPosition(), 0);
+        this.fish = SimplePool.spawn(PoolType.Body, this.node.getWorldPosition(), 0);
     }
 
     onLoad() {
         this.isMoving = false;
-        
+        this.point = 0;
     }
 
     public onHit(){
@@ -33,10 +36,20 @@ export default class Player extends Character {
     }
 
     protected onDeath(){
-        super.onDeath();
+        //super.onDeath();
         console.log("player dead");
         //this.node.destroy();
     }
+
+    public onEat(){
+        super.onEat();
+    }
+
+    protected eatFood(){
+        this.point+= 5;
+        console.log(`player point: ${this.point}`);
+    }
+
     move(dt){
         let direction = this.joystick.direction; // Lấy vector hướng từ direction của joystick
 
@@ -88,7 +101,12 @@ export default class Player extends Character {
  
     }
 
-    
+    levelUp(){
+        if(this.point == 15){
+            SimplePool.despawn(this.blade);
+            
+        }
+    }
     update (dt) {
         this.move(dt);
     }
