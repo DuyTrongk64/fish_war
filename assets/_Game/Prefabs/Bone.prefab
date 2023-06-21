@@ -138,7 +138,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "poolType": 14,
+    "poolType": 32,
     "upSpeed": 500,
     "timer": 0,
     "_id": ""

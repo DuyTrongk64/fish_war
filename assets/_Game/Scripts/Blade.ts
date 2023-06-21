@@ -4,7 +4,7 @@ import PoolControl from "./Pool/PoolControl";
 import PoolMember from "./Pool/PoolMember";
 import SimplePool from "./Pool/SimplePool";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class Blade extends PoolMember {
@@ -17,14 +17,17 @@ export default class Blade extends PoolMember {
         //manager.enabledDebugDraw = true;
     }
 
-    onCollisionEnter(other: cc.Collider, self: cc.Collider){
+    onCollisionEnter(other: cc.Collider, self: cc.Collider) {
         //console.log(`start: ${other.node.parent.parent.name}`);
-        if(other.node.name == 'Body'){
-            if(other.node.parent.name == 'Body')
-            other.node.parent.parent.getComponent(Character).onHit();
-            else
-            other.node.parent.getComponent(Character).onHit();
+        
+        if (other.node.name == 'Body') {
+            if (self.node.parent.name != other.node.parent.name || self.node.parent.parent.name != other.node.parent.parent.name) {
+                if (other.node.parent.name == 'Body')
+                    other.node.parent.parent.getComponent(Character).onHit();
+                else
+                    other.node.parent.getComponent(Character).onHit();
+            }
         }
     }
-   
+
 }

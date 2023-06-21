@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "meat2",
+    "_name": "Blade2",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -27,13 +27,10 @@
       },
       {
         "__id__": 4
-      },
-      {
-        "__id__": 5
       }
     ],
     "_prefab": {
-      "__id__": 6
+      "__id__": 5
     },
     "_opacity": 255,
     "_color": {
@@ -45,28 +42,28 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 141,
+      "width": 275,
       "height": 125
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
+      "x": 0.02257818181818183,
+      "y": 0.51056
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -10.795000000000073,
-        3.08400000000006,
+        -131.3,
+        1.3,
         0,
         0,
         0,
         0,
         1,
-        0.3,
-        0.3,
-        0.3
+        1.3,
+        1,
+        1
       ]
     },
     "_eulerAngles": {
@@ -78,8 +75,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 3,
-    "groupIndex": 3,
+    "_groupIndex": 2,
+    "groupIndex": 2,
     "_id": ""
   },
   {
@@ -98,7 +95,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "71c317ab-46c8-4330-8b7d-011f74cd1469"
+      "__uuid__": "dd3f8e53-f373-4096-8060-3704fd4e59e0"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -112,25 +109,6 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Animation",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_defaultClip": {
-      "__uuid__": "b0cb019f-4328-4b82-8589-17f1f4012cce"
-    },
-    "_clips": [
-      {
-        "__uuid__": "b0cb019f-4328-4b82-8589-17f1f4012cce"
-      }
-    ],
-    "playOnLoad": true,
     "_id": ""
   },
   {
@@ -150,77 +128,76 @@
     "points": [
       {
         "__type__": "cc.Vec2",
-        "x": -43.1,
-        "y": -61.5
+        "x": 2.2,
+        "y": -21.3
       },
       {
         "__type__": "cc.Vec2",
-        "x": -1.8,
-        "y": -50.3
+        "x": 134.7,
+        "y": -16.7
       },
       {
         "__type__": "cc.Vec2",
-        "x": 46.6,
-        "y": -19.3
+        "x": 138.3,
+        "y": -39.3
       },
       {
         "__type__": "cc.Vec2",
-        "x": 68,
-        "y": 4.3
+        "x": 156.7,
+        "y": -58.9
       },
       {
         "__type__": "cc.Vec2",
-        "x": 65,
-        "y": 41.7
+        "x": 187.4,
+        "y": -63.3
       },
       {
         "__type__": "cc.Vec2",
-        "x": 42.5,
-        "y": 56.3
+        "x": 221.8,
+        "y": -51.8
       },
       {
         "__type__": "cc.Vec2",
-        "x": 17,
-        "y": 61.9
+        "x": 266.1,
+        "y": 0
       },
       {
         "__type__": "cc.Vec2",
-        "x": -16.8,
-        "y": 47
+        "x": 243.1,
+        "y": 28.7
       },
       {
         "__type__": "cc.Vec2",
-        "x": -47.9,
-        "y": 25.9
+        "x": 190.1,
+        "y": 58
       },
       {
         "__type__": "cc.Vec2",
-        "x": -69.9,
-        "y": -2.5
+        "x": 162.2,
+        "y": 57.1
       },
       {
         "__type__": "cc.Vec2",
-        "x": -67.9,
-        "y": -33.4
+        "x": 131.7,
+        "y": 10.2
       },
       {
         "__type__": "cc.Vec2",
-        "x": -57.9,
-        "y": -54.8
+        "x": -0.2,
+        "y": 12.7
       }
     ],
     "_id": ""
   },
   {
-    "__type__": "964b6cJM89CfY3BgSnQCGgV",
+    "__type__": "5526cgFDK1AOab5unokSpRq",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "poolType": 31,
-    "downSpeed": 10,
+    "poolType": 12,
     "_id": ""
   },
   {
@@ -229,7 +206,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "b08f9ed2-b948-47fd-b822-8cbd08c3a27f"
+      "__uuid__": "9a4bfa50-4cef-46af-bd0d-f0cbbe1547dd"
     },
     "fileId": "",
     "sync": false

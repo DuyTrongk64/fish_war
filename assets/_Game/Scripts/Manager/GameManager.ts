@@ -21,6 +21,7 @@ export default class GameManager extends cc.Component {
   @property(Player)
   player: Player = null;
 
+  coutEnemies: number = 0;
   
 
   //@property(cc.Node)
@@ -54,7 +55,7 @@ export default class GameManager extends cc.Component {
       //let ranPos = new cc.Vec3(this.getRandomInt(plWorldPos.x+50,plWorldPos.y+70),this.getRandomInt(plWorldPos.y+50,plWorldPos.x+70),0);
       let ranPos = new cc.Vec3(ranPosX,ranPosY, 0)
       SimplePool.spawnT<Enemies>(PoolType.Enemy, ranPos, 0);
-
+      this.coutEnemies++;
     }
   }
 

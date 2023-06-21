@@ -4,11 +4,12 @@ const { ccclass, property } = cc._decorator;
 export enum PoolType {
     None = 0,
     Body = 1,
-    Blade = 2,
-    Enemy = 10,
-    Meat1 = 12,
-    Meat2 = 13,
-    Bone  = 14,
+    Blade = 11,
+    Blade2 = 12,
+    Enemy = 21,
+    Meat1 = 30,
+    Meat2 = 31,
+    Bone  = 32,
 }
 
 @ccclass

@@ -239,6 +239,7 @@
       "__id__": 2
     },
     "_enabled": true,
+    "poolType": 0,
     "_id": ""
   },
   {
@@ -652,14 +653,16 @@
       "__id__": 1
     },
     "_enabled": true,
-    "poolType": 10,
-    "meat": {
-      "__uuid__": "19f1efe8-bd72-4a66-881c-c02a06136c5c"
-    },
-    "bone": {
-      "__uuid__": "bafb698b-c55f-45b9-bb82-b33cde0346c1"
-    },
+    "poolType": 21,
+    "speed": 100,
     "player": null,
+    "startPosition": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "isMoving": false,
     "_id": ""
   },
   {

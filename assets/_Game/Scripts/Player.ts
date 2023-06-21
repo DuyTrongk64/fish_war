@@ -102,12 +102,13 @@ export default class Player extends Character {
     }
 
     levelUp(){
-        if(this.point == 15){
+        if(this.point == 30){
             SimplePool.despawn(this.blade);
-            
+            SimplePool.spawn(PoolType.Blade2, this.Blade.getWorldPosition(), 0);
         }
     }
     update (dt) {
         this.move(dt);
+        this.levelUp();
     }
 }

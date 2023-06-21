@@ -38,6 +38,10 @@ export default class Enemies extends Character {
         SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0);
         SimplePool.despawn(this);
         this.node.destroy();
+        if(GameManager.Ins.coutEnemies <7){
+            console.log('dfsdf');
+            //GameManager.Ins.ranSpawnEnemies();
+        }
     }
 
     public onEat(){

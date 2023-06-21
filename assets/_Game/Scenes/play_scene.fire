@@ -84,13 +84,13 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 31
+        "__id__": 25
       },
       {
-        "__id__": 32
+        "__id__": 26
       },
       {
-        "__id__": 33
+        "__id__": 27
       }
     ],
     "_prefab": null,
@@ -634,7 +634,7 @@
       "array": [
         0,
         0,
-        506.6248612138966,
+        252.1373216839261,
         0,
         0,
         0,
@@ -1129,79 +1129,61 @@
     "_enabled": true,
     "pools": [
       {
-        "__id__": 25
+        "root": {
+          "__id__": 20
+        },
+        "amount": 5,
+        "prefab": {
+          "__uuid__": "ac169d74-e68a-40c4-b13a-c783a5fde79b"
+        }
       },
       {
-        "__id__": 26
+        "root": {
+          "__id__": 20
+        },
+        "amount": 5,
+        "prefab": {
+          "__uuid__": "03ccfcab-f545-4d2a-9d39-64c236b33b65"
+        }
       },
       {
-        "__id__": 27
+        "root": {
+          "__id__": 2
+        },
+        "amount": 5,
+        "prefab": {
+          "__uuid__": "f7d7cf39-4a72-4726-9ef8-39d06e8b5a13"
+        }
       },
       {
-        "__id__": 28
+        "root": {
+          "__id__": 2
+        },
+        "amount": 5,
+        "prefab": {
+          "__uuid__": "4f2c4611-92f3-42c9-9345-70f02001bebb"
+        }
       },
       {
-        "__id__": 29
+        "root": {
+          "__id__": 2
+        },
+        "amount": 5,
+        "prefab": {
+          "__uuid__": "b08f9ed2-b948-47fd-b822-8cbd08c3a27f"
+        }
       },
       {
-        "__id__": 30
+        "root": {
+          "__id__": 2
+        },
+        "amount": 5,
+        "prefab": {
+          "__uuid__": "feb14adb-6bb0-4e79-bbe5-a0ecb04918df"
+        }
       }
     ],
     "_id": "1cZXXUcYdGvptE2Qg/GuIC"
-  },
-  {
-    "root": {
-      "__id__": 20
-    },
-    "prefab": {
-      "__uuid__": "ac169d74-e68a-40c4-b13a-c783a5fde79b"
-    },
-    "amount": 5
-  },
-  {
-    "root": {
-      "__id__": 20
-    },
-    "prefab": {
-      "__uuid__": "03ccfcab-f545-4d2a-9d39-64c236b33b65"
-    },
-    "amount": 5
-  },
-  {
-    "root": {
-      "__id__": 2
-    },
-    "prefab": {
-      "__uuid__": "f7d7cf39-4a72-4726-9ef8-39d06e8b5a13"
-    },
-    "amount": 5
-  },
-  {
-    "root": {
-      "__id__": 2
-    },
-    "prefab": {
-      "__uuid__": "4f2c4611-92f3-42c9-9345-70f02001bebb"
-    },
-    "amount": 5
-  },
-  {
-    "root": {
-      "__id__": 2
-    },
-    "prefab": {
-      "__uuid__": "b08f9ed2-b948-47fd-b822-8cbd08c3a27f"
-    },
-    "amount": 5
-  },
-  {
-    "root": {
-      "__id__": 2
-    },
-    "prefab": {
-      "__uuid__": "feb14adb-6bb0-4e79-bbe5-a0ecb04918df"
-    },
-    "amount": 5
   },
   {
     "__type__": "cc.Canvas",
