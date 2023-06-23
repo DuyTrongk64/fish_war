@@ -10,6 +10,7 @@ export default class GameManager extends cc.Component {
 
   // singleton
   private static ins: GameManager;
+
   public static get Ins(): GameManager {
     return GameManager.ins;
   }
@@ -21,8 +22,11 @@ export default class GameManager extends cc.Component {
   @property(Player)
   player: Player = null;
 
-  coutEnemies: number = 0;
+  public coutEnemies: number = 0;
 
+  public isDead: boolean = false;
+
+  public point: number = 0;
 
   //@property(cc.Node)
 
@@ -47,10 +51,14 @@ export default class GameManager extends cc.Component {
     posArray[3] = new cc.Vec3(750, 200, 0);
     posArray[4] = new cc.Vec3(250, 500, 0);
 
-    for (let i = 0; i < 5; i++) {
-      let enemy = SimplePool.spawnT<Enemies>(PoolType.Enemy, posArray[i], 0);
-    }
+    SimplePool.spawnT<Enemies>(PoolType.Enemy, posArray[0], 0);
+    SimplePool.spawnT<Enemies>(PoolType.Enemy2, posArray[1], 0);
+    SimplePool.spawnT<Enemies>(PoolType.Enemy4, posArray[2], 0);
+    SimplePool.spawnT<Enemies>(PoolType.Enemy5, posArray[3], 0);
+    SimplePool.spawnT<Enemies>(PoolType.Enemy, posArray[4], 0);
+    this.coutEnemies = 5;
   }
+
 
   public ranSpawnEnemies() {
     let plWorldPos = this.player.node.getWorldPosition();
@@ -66,14 +74,32 @@ export default class GameManager extends cc.Component {
     } while (plWorldPos.y - 200 <= ranPosY && ranPosY <= plWorldPos.y + 200);
 
     let ranPos = new cc.Vec3(ranPosX, ranPosY, 0)
-    let enemy = SimplePool.spawnT<Enemies>(PoolType.Enemy, ranPos, 0);
-    this.coutEnemies++;
-    console.log(`coutEnemies: ${this.coutEnemies}`);
-    console.log(`world pos: ${enemy.node.getWorldPosition()}`);
 
+    let ranEnemyType;
+
+    if (this.point > 500 || this.point < 750) {
+      do {
+        ranEnemyType = this.getRandomInt(21, 25);
+      } while (ranEnemyType == 23);
+    }
+
+    if (this.point > 750) {
+      ranEnemyType = this.getRandomInt(21, 26);
+    }
+
+    let enemy = SimplePool.spawnT<Enemies>(ranEnemyType, ranPos, 0);
+    this.coutEnemies++;
+    // console.log(`coutEnemies: ${this.coutEnemies}`);
+    // console.log(`world pos: ${enemy.node.getWorldPosition()}`);
+
+    if (this.coutEnemies <= 7) this.ranSpawnEnemies();
   }
 
   start() {
     this.startSpawnEnemies();
+  }
+
+  update(dt) {
+    //console.log(`count enemies: ${this.coutEnemies}`);
   }
 }

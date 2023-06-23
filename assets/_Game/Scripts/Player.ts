@@ -2,6 +2,7 @@ import Character from "./Character";
 import Joystick from "./Joystick"
 import PoolMember from "./Pool/PoolMember";
 import SimplePool, { PoolType } from "./Pool/SimplePool";
+import GameManager from "./Manager/GameManager";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -19,7 +20,6 @@ export default class Player extends Character {
     private blade: PoolMember;
     private fish: PoolMember;
     private isMoving: boolean;
-    private point: number;
 
     start () {
         this.blade = SimplePool.spawn(PoolType.Blade, this.Blade.getWorldPosition(), 0);
@@ -28,7 +28,7 @@ export default class Player extends Character {
 
     onLoad() {
         this.isMoving = false;
-        this.point = 0;
+        GameManager.Ins.point = 0;
     }
 
     public onHit(){
@@ -36,9 +36,12 @@ export default class Player extends Character {
     }
 
     protected onDeath(){
-        console.log('player daed');
+        GameManager.Ins.isDead = true;
+        // SimplePool.despawn(this.fish);
+        // SimplePool.despawn(this.blade);
         // SimplePool.spawn(PoolType.Meat1, this.node.getWorldPosition().add(cc.v3(-10,0,0)), 0);
         // SimplePool.spawn(PoolType.Meat2, this.node.getWorldPosition().add(cc.v3(10,0,0)), 0);
+        // SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0);
     }
 
     public onEat(){
@@ -46,9 +49,9 @@ export default class Player extends Character {
     }
 
     protected eatFood(){
-        this.point+= 5;
+        GameManager.Ins.point+=5;
         this.levelUp();
-        console.log(`player point: ${this.point}`);
+        console.log(`player point: ${GameManager.Ins.point}`);
     }
 
     move(dt){
@@ -103,18 +106,43 @@ export default class Player extends Character {
     }
 
     levelUp(){
-        if(this.point == 15){
+        if(GameManager.Ins.point == 50){
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade2, this.Blade.getWorldPosition(), 0);
         }
 
-        if(this.point == 30){
+        if(GameManager.Ins.point == 100){
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade3, this.Blade.getWorldPosition(), 0);
         }
+
+        if(GameManager.Ins.point == 200){
+            SimplePool.despawn(this.blade);
+            this.blade = SimplePool.spawn(PoolType.Blade4, this.Blade.getWorldPosition(), 0);
+        }
+
+        if(GameManager.Ins.point == 300){
+            SimplePool.despawn(this.blade);
+            this.blade = SimplePool.spawn(PoolType.Blade5, this.Blade.getWorldPosition(), 0);
+        }
+
+        if(GameManager.Ins.point == 500){
+            SimplePool.despawn(this.blade);
+            this.blade = SimplePool.spawn(PoolType.Blade6, this.Blade.getWorldPosition(), 0);
+        }
+
+        if(GameManager.Ins.point == 750){
+            SimplePool.despawn(this.blade);
+            this.blade = SimplePool.spawn(PoolType.Blade7, this.Blade.getWorldPosition(), 0);
+        }
+
+        if(GameManager.Ins.point == 1500){
+            SimplePool.despawn(this.blade);
+            this.blade = SimplePool.spawn(PoolType.Blade8, this.Blade.getWorldPosition(), 0);
+        }
+
     }
     update (dt) {
-        this.move(dt);
-        
+        this.move(dt);  
     }
 }

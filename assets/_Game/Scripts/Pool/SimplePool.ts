@@ -16,6 +16,8 @@ export enum PoolType {
     Blade4 = 14,
     Blade5 = 15,
     Blade6 = 16,
+    Blade7 = 17,
+    Blade8 = 18,
     Enemy = 21,
     Enemy2 = 22,
     Enemy3 = 23,

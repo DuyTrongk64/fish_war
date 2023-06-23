@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Blade3",
+    "_name": "Blade6",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -42,8 +42,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 509,
-      "height": 76
+      "width": 501,
+      "height": 128
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -61,7 +61,7 @@
         0,
         0,
         1,
-        1,
+        1.5,
         1,
         1
       ]
@@ -95,7 +95,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "bffc6517-f78e-4a92-b547-fd1ad2d107f3"
+      "__uuid__": "aebacf46-d420-46cd-9a6e-b1ba25a77f9e"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -133,23 +133,58 @@
       },
       {
         "__type__": "cc.Vec2",
-        "x": -5.5,
-        "y": -24.3
+        "x": 46.5,
+        "y": -10.7
       },
       {
         "__type__": "cc.Vec2",
-        "x": 253.5,
-        "y": -20.5
+        "x": 57.6,
+        "y": -53.7
       },
       {
         "__type__": "cc.Vec2",
-        "x": 295.7,
-        "y": 1.8
+        "x": 75.9,
+        "y": -63.4
       },
       {
         "__type__": "cc.Vec2",
-        "x": 326.9,
-        "y": 36.1
+        "x": 165.6,
+        "y": -60
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 259,
+        "y": -34.9
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 320.4,
+        "y": -0.4
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 257.2,
+        "y": 35
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 164.9,
+        "y": 59.8
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 80.5,
+        "y": 63.6
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 52.7,
+        "y": 53.1
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 48.8,
+        "y": 12.7
       },
       {
         "__type__": "cc.Vec2",
@@ -167,7 +202,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "poolType": 13,
+    "poolType": 16,
     "_id": ""
   },
   {

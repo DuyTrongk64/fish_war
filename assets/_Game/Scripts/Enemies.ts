@@ -26,7 +26,9 @@ export default class Enemies extends Character {
     protected onLoad() {
         this.player = GameManager.Ins.player;
         //console.log(`this.player is null?: ${this.player == null}`);
-
+        if(this.player!= null){
+            this.startPosition = this.node.position; // Đặt điểm bắt đầu là vị trí hiện tại Enemy
+        }
         this.startPosition = this.node.position; // Đặt điểm bắt đầu là vị trí hiện tại Enemy
         this.targetPosition = this.player.node.position; // Đặt điểm đến là vị trí của player
         this.isMoving = true;
@@ -37,8 +39,10 @@ export default class Enemies extends Character {
         SimplePool.spawn(PoolType.Meat2, this.node.getWorldPosition().add(cc.v3(10,0,0)), 0);
         SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0);
         SimplePool.despawn(this);
-        //this.node.destroy();
+        GameManager.Ins.coutEnemies-- ;
         GameManager.Ins.ranSpawnEnemies();
+        //console.log(`speed: ${this.speed}`);
+        
     }
 
     public onEat(){
@@ -49,7 +53,14 @@ export default class Enemies extends Character {
         
     }
 
+    updateSpeed(){
+        if(GameManager.Ins.point == 100) this.speed = 150;
+        if(GameManager.Ins.point == 300) this.speed = 200;
+        if(GameManager.Ins.point == 750) this.speed = 300;
+    }
+
     protected update(dt: number) {
+        this.updateSpeed();
         const direction = this.targetPosition.sub(this.node.position); // Tính toán vector hướng từ vị trí hiện tại đến điểm đến
         const normalizedDirection = direction.normalize();// Chuẩn hóa vector hướng
         const movement = normalizedDirection.mul(this.speed * dt); // Tính toán khoảng di chuyển dựa trên tốc độ và thời gian delta 
