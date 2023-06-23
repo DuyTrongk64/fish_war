@@ -33,15 +33,12 @@ export default class Enemies extends Character {
     }
 
     protected onDeath() {
-        SimplePool.spawn(PoolType.Meat1, this.node.getWorldPosition(), 0);
-        SimplePool.spawn(PoolType.Meat2, this.node.getWorldPosition(), 0);
+        SimplePool.spawn(PoolType.Meat1, this.node.getWorldPosition().add(cc.v3(-10,0,0)), 0);
+        SimplePool.spawn(PoolType.Meat2, this.node.getWorldPosition().add(cc.v3(10,0,0)), 0);
         SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0);
         SimplePool.despawn(this);
-        this.node.destroy();
-        if(GameManager.Ins.coutEnemies <7){
-            console.log('dfsdf');
-            //GameManager.Ins.ranSpawnEnemies();
-        }
+        //this.node.destroy();
+        GameManager.Ins.ranSpawnEnemies();
     }
 
     public onEat(){

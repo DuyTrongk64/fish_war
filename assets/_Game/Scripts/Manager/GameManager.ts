@@ -22,7 +22,7 @@ export default class GameManager extends cc.Component {
   player: Player = null;
 
   coutEnemies: number = 0;
-  
+
 
   //@property(cc.Node)
 
@@ -38,28 +38,42 @@ export default class GameManager extends cc.Component {
     return random;
   }
 
-  public ranSpawnEnemies() {
+  public startSpawnEnemies() {
+    var posArray: Array<cc.Vec3> = [];
+
+    posArray[0] = new cc.Vec3(255, 1100, 0);
+    posArray[1] = new cc.Vec3(1250, 1200, 0);
+    posArray[2] = new cc.Vec3(1600, 500, 0);
+    posArray[3] = new cc.Vec3(750, 200, 0);
+    posArray[4] = new cc.Vec3(250, 500, 0);
+
     for (let i = 0; i < 5; i++) {
-      let plWorldPos = this.player.node.getWorldPosition();
-
-      let ranPosX : number;
-      do {
-        ranPosX = this.getRandomInt(0,2000);
-      } while (Math.abs(ranPosX)<plWorldPos.x+200);
-
-      let ranPosY : number;
-      do {
-        ranPosY = this.getRandomInt(0,1300);
-      } while (Math.abs(ranPosY)<plWorldPos.y+200);
-
-      //let ranPos = new cc.Vec3(this.getRandomInt(plWorldPos.x+50,plWorldPos.y+70),this.getRandomInt(plWorldPos.y+50,plWorldPos.x+70),0);
-      let ranPos = new cc.Vec3(ranPosX,ranPosY, 0)
-      SimplePool.spawnT<Enemies>(PoolType.Enemy, ranPos, 0);
-      this.coutEnemies++;
+      let enemy = SimplePool.spawnT<Enemies>(PoolType.Enemy, posArray[i], 0);
     }
   }
 
+  public ranSpawnEnemies() {
+    let plWorldPos = this.player.node.getWorldPosition();
+
+    let ranPosX: number;
+    do {
+      ranPosX = this.getRandomInt(0, 2000);
+    } while (plWorldPos.x - 200 <= ranPosX && ranPosX <= plWorldPos.x + 200);
+
+    let ranPosY: number;
+    do {
+      ranPosY = this.getRandomInt(0, 1300);
+    } while (plWorldPos.y - 200 <= ranPosY && ranPosY <= plWorldPos.y + 200);
+
+    let ranPos = new cc.Vec3(ranPosX, ranPosY, 0)
+    let enemy = SimplePool.spawnT<Enemies>(PoolType.Enemy, ranPos, 0);
+    this.coutEnemies++;
+    console.log(`coutEnemies: ${this.coutEnemies}`);
+    console.log(`world pos: ${enemy.node.getWorldPosition()}`);
+
+  }
+
   start() {
-    this.ranSpawnEnemies();
+    this.startSpawnEnemies();
   }
 }

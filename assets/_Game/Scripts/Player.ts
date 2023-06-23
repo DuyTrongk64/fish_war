@@ -36,9 +36,9 @@ export default class Player extends Character {
     }
 
     protected onDeath(){
-        //super.onDeath();
-        console.log("player dead");
-        //this.node.destroy();
+        console.log('player daed');
+        // SimplePool.spawn(PoolType.Meat1, this.node.getWorldPosition().add(cc.v3(-10,0,0)), 0);
+        // SimplePool.spawn(PoolType.Meat2, this.node.getWorldPosition().add(cc.v3(10,0,0)), 0);
     }
 
     public onEat(){
@@ -47,6 +47,7 @@ export default class Player extends Character {
 
     protected eatFood(){
         this.point+= 5;
+        this.levelUp();
         console.log(`player point: ${this.point}`);
     }
 
@@ -102,13 +103,18 @@ export default class Player extends Character {
     }
 
     levelUp(){
+        if(this.point == 15){
+            SimplePool.despawn(this.blade);
+            this.blade = SimplePool.spawn(PoolType.Blade2, this.Blade.getWorldPosition(), 0);
+        }
+
         if(this.point == 30){
             SimplePool.despawn(this.blade);
-            SimplePool.spawn(PoolType.Blade2, this.Blade.getWorldPosition(), 0);
+            this.blade = SimplePool.spawn(PoolType.Blade3, this.Blade.getWorldPosition(), 0);
         }
     }
     update (dt) {
         this.move(dt);
-        this.levelUp();
+        
     }
 }
