@@ -61,6 +61,10 @@ export default class Enemies extends Character {
 
     protected update(dt: number) {
         this.updateSpeed();
+        this.randomMove(dt)  
+    }
+
+    randomMove(dt){
         const direction = this.targetPosition.sub(this.node.position); // Tính toán vector hướng từ vị trí hiện tại đến điểm đến
         const normalizedDirection = direction.normalize();// Chuẩn hóa vector hướng
         const movement = normalizedDirection.mul(this.speed * dt); // Tính toán khoảng di chuyển dựa trên tốc độ và thời gian delta 

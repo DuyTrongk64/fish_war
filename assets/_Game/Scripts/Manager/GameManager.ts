@@ -92,7 +92,7 @@ export default class GameManager extends cc.Component {
     // console.log(`coutEnemies: ${this.coutEnemies}`);
     // console.log(`world pos: ${enemy.node.getWorldPosition()}`);
 
-    if (this.coutEnemies <= 7) this.ranSpawnEnemies();
+    if (this.coutEnemies < 7) this.ranSpawnEnemies();
   }
 
   start() {
@@ -100,6 +100,6 @@ export default class GameManager extends cc.Component {
   }
 
   update(dt) {
-    //console.log(`count enemies: ${this.coutEnemies}`);
+    
   }
 }
