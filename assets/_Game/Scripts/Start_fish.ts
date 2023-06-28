@@ -31,7 +31,7 @@ export default class NewClass extends cc.Component {
 
     private on_stick_start(event: cc.Touch){
         this.startJoystickPos = this.node.getPosition();
-        console.log(this.startJoystickPos);
+        //console.log(this.startJoystickPos);
         //this.startJoystickPos = this.node.parent.convertToNodeSpaceAR(this.node.getPosition());
         this.isActive = true;
     }
