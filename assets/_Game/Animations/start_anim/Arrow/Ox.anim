@@ -3,7 +3,7 @@
   "_name": "Ox",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 1.6666666666666667,
+  "_duration": 2.25,
   "sample": 60,
   "speed": 1,
   "wrapMode": 1,
@@ -14,36 +14,44 @@
           "x": [
             {
               "frame": 0,
-              "value": 80
+              "value": 18
             },
             {
-              "frame": 0.3333333333333333,
-              "value": 150
+              "frame": 0.25,
+              "value": 48
             },
             {
-              "frame": 0.6666666666666666,
-              "value": 80
+              "frame": 0.5,
+              "value": 18
             },
             {
               "frame": 1,
-              "value": 150
+              "value": 18
             },
             {
-              "frame": 1.3333333333333333,
-              "value": 80
+              "frame": 1.25,
+              "value": 48
             },
             {
-              "frame": 1.6666666666666667,
-              "value": 150
+              "frame": 1.5,
+              "value": 18
+            },
+            {
+              "frame": 2,
+              "value": 18
+            },
+            {
+              "frame": 2.25,
+              "value": 48
             }
           ],
           "opacity": [
             {
-              "frame": 1.3333333333333333,
+              "frame": 2,
               "value": 255
             },
             {
-              "frame": 1.6666666666666667,
+              "frame": 2.25,
               "value": 0
             }
           ]
@@ -54,36 +62,44 @@
           "x": [
             {
               "frame": 0,
-              "value": -240
+              "value": -195
             },
             {
-              "frame": 0.3333333333333333,
-              "value": -310
+              "frame": 0.25,
+              "value": -225
             },
             {
-              "frame": 0.6666666666666666,
-              "value": -240
+              "frame": 0.5,
+              "value": -195
             },
             {
               "frame": 1,
-              "value": -310
+              "value": -195
             },
             {
-              "frame": 1.3333333333333333,
-              "value": -240
+              "frame": 1.25,
+              "value": -225
             },
             {
-              "frame": 1.6666666666666667,
-              "value": -310
+              "frame": 1.5,
+              "value": -195
+            },
+            {
+              "frame": 2,
+              "value": -195
+            },
+            {
+              "frame": 2.25,
+              "value": -225
             }
           ],
           "opacity": [
             {
-              "frame": 1.3333333333333333,
+              "frame": 2,
               "value": 255
             },
             {
-              "frame": 1.6666666666666667,
+              "frame": 2.25,
               "value": 0
             }
           ]
