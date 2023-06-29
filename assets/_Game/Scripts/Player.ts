@@ -3,6 +3,7 @@ import Joystick from "./Joystick"
 import PoolMember from "./Pool/PoolMember";
 import SimplePool, { PoolType } from "./Pool/SimplePool";
 import GameManager from "./Manager/GameManager";
+import UIManager from "./Manager/UI Manager";
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -21,10 +22,15 @@ export default class Player extends Character {
     private fish: PoolMember;
     private isMoving: boolean;
 
-    start() {
+    public onAwake() {
         this.selectOption();
+        UIManager.Ins.onOpen(0);
     }
 
+    public onStart(){
+        UIManager.Ins.onClose(0);
+    }
+    
     onLoad() {
         this.isMoving = false;
         GameManager.Ins.point = 0;
@@ -53,6 +59,10 @@ export default class Player extends Character {
         console.log(`player point: ${GameManager.Ins.point}`);
     }
 
+    public speedUp(newSpeed: number){
+        this.speed = newSpeed;
+    }
+    
     move(dt) {
         let direction = this.joystick.direction; // Lấy vector hướng từ direction của joystick
 

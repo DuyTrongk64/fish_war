@@ -1,5 +1,5 @@
 import Utilities from "./Utilities";
-
+import GameManager from "./Manager/GameManager";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -33,7 +33,7 @@ export default class joystick extends cc.Component {
     }
     
     private on_stick_start(event: cc.Touch) {
-
+        GameManager.Ins.player.onStart();
         // Hiển thị joystick tại vị trí click
         
         const start = event.getLocation(); 

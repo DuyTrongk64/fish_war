@@ -15,6 +15,9 @@ export default class UI_Controller extends cc.Component {
     @property(cc.Node)
     fish: cc.Node = null;
 
+    @property(cc.Node)
+    text: cc.Node = null;
+
     private time: number = 0;
     private delay_time: number = 1.5;
 
@@ -23,6 +26,7 @@ export default class UI_Controller extends cc.Component {
         this.arrowOx.active = false;
         this.arrowOy.active = false;
         this.fish.active = false;
+        this.text.active = false;
     }
 
     start() {
@@ -34,6 +38,7 @@ export default class UI_Controller extends cc.Component {
             this.blackBG.active = true;
             this.arrowOx.active = true;
             this.arrowOy.active = true;
+            this.text.active = true;
             this.fish.active = true;
 
         }, 0.5);

@@ -22,7 +22,7 @@ export default class NewClass extends cc.Component {
         // Enable Collision System
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;
-        manager.enabledDebugDraw = true;
+        //manager.enabledDebugDraw = true;
 
         this.node.on(cc.Node.EventType.TOUCH_START, this.on_stick_start, this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE, this.on_stick_move, this);

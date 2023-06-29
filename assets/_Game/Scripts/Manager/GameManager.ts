@@ -28,7 +28,7 @@ export default class GameManager extends cc.Component {
 
   public point: number = 0;
 
-  //@property(cc.Node)
+  private time: number = 0;
 
   private list: Character[] = [];
 
@@ -95,11 +95,23 @@ export default class GameManager extends cc.Component {
     if (this.coutEnemies < 7) this.ranSpawnEnemies();
   }
 
+  // Hàm chờ 
+  waitAndExecute(callback: () => void, time: number) {
+    setTimeout(() => {
+      callback();
+    }, time);
+  }
+
   start() {
-    this.startSpawnEnemies();
+    this.player.onAwake();
+    this.waitAndExecute(() => this.startSpawnEnemies(), 5500);
+
   }
 
   update(dt) {
-    
+      this.time+=dt;
+      if(this.time>=5.5){
+        this.player.onStart();
+      }
   }
 }
