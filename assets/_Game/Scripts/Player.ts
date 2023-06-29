@@ -3,14 +3,14 @@ import Joystick from "./Joystick"
 import PoolMember from "./Pool/PoolMember";
 import SimplePool, { PoolType } from "./Pool/SimplePool";
 import GameManager from "./Manager/GameManager";
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class Player extends Character {
 
     @property(Joystick)
     joystick: Joystick = null;
-    
+
     @property
     speed: number = 0;
 
@@ -21,9 +21,8 @@ export default class Player extends Character {
     private fish: PoolMember;
     private isMoving: boolean;
 
-    start () {
-        this.blade = SimplePool.spawn(PoolType.Blade, this.Blade.getWorldPosition(), 0);
-        this.fish = SimplePool.spawn(PoolType.Body, this.node.getWorldPosition(), 0);
+    start() {
+        this.selectOption();
     }
 
     onLoad() {
@@ -31,11 +30,11 @@ export default class Player extends Character {
         GameManager.Ins.point = 0;
     }
 
-    public onHit(){
+    public onHit() {
         super.onHit();
     }
 
-    protected onDeath(){
+    protected onDeath() {
         GameManager.Ins.isDead = true;
         // SimplePool.despawn(this.fish);
         // SimplePool.despawn(this.blade);
@@ -44,17 +43,17 @@ export default class Player extends Character {
         // SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0);
     }
 
-    public onEat(){
+    public onEat() {
         super.onEat();
     }
 
-    protected eatFood(){
-        GameManager.Ins.point+=5;
+    protected eatFood() {
+        GameManager.Ins.point += 5;
         this.levelUp();
         console.log(`player point: ${GameManager.Ins.point}`);
     }
 
-    move(dt){
+    move(dt) {
         let direction = this.joystick.direction; // Lấy vector hướng từ direction của joystick
 
         // Kiểm tra xem joystick có di chuyển không
@@ -71,22 +70,24 @@ export default class Player extends Character {
         this.node.angle = rotationAngle; // gán giá trị góc quay rotationAngle cho thuộc tính angle của node (Player), để xoay Player theo hướng tương ứng.
 
 
-        let posX = this.speed* dt * direction.x; // tính toán giá trị di chuyển theo phương x 
-        let posY = this.speed* dt * direction.y; // tính toán giá trị di chuyển theo phương y
+        let posX = this.speed * dt * direction.x; // tính toán giá trị di chuyển theo phương x 
+        let posY = this.speed * dt * direction.y; // tính toán giá trị di chuyển theo phương y
 
-        
-        if (posX > 0){ // quay Player theo hướng di chuyển.
-            this.node.setScale(0.3, 0.3)}
-        else{
-            this.node.setScale(0.3, -0.3)}
+
+        if (posX > 0) { // quay Player theo hướng di chuyển.
+            this.node.setScale(0.3, 0.3)
+        }
+        else {
+            this.node.setScale(0.3, -0.3)
+        }
 
         this.node.x += posX; //  cập nhật giá trị tọa độ x để di chuyển theo phương x.
         this.node.y += posY; //  cập nhật giá trị tọa độ y để di chuyển theo phương y.
 
 
         // va chạm khung hình 
-        
-        const minX = -cc.winSize.width / 2.1; 
+
+        const minX = -cc.winSize.width / 2.1;
         const maxX = cc.winSize.width / 2.1;
         const minY = -cc.winSize.height / 2.7;
         const maxY = cc.winSize.height / 3.5;
@@ -102,47 +103,71 @@ export default class Player extends Character {
         } else if (this.node.y > maxY) {
             this.node.y = maxY;
         }
- 
+
     }
 
-    levelUp(){
-        if(GameManager.Ins.point == 50){
+    levelUp() {
+        if (GameManager.Ins.point == 50) {
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade2, this.Blade.getWorldPosition(), 0);
         }
 
-        if(GameManager.Ins.point == 100){
+        if (GameManager.Ins.point == 100) {
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade3, this.Blade.getWorldPosition(), 0);
         }
 
-        if(GameManager.Ins.point == 200){
+        if (GameManager.Ins.point == 200) {
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade4, this.Blade.getWorldPosition(), 0);
         }
 
-        if(GameManager.Ins.point == 300){
+        if (GameManager.Ins.point == 300) {
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade5, this.Blade.getWorldPosition(), 0);
         }
 
-        if(GameManager.Ins.point == 500){
+        if (GameManager.Ins.point == 500) {
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade6, this.Blade.getWorldPosition(), 0);
         }
 
-        if(GameManager.Ins.point == 750){
+        if (GameManager.Ins.point == 750) {
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade7, this.Blade.getWorldPosition(), 0);
         }
 
-        if(GameManager.Ins.point == 1500){
+        if (GameManager.Ins.point == 1500) {
             SimplePool.despawn(this.blade);
             this.blade = SimplePool.spawn(PoolType.Blade8, this.Blade.getWorldPosition(), 0);
         }
 
     }
-    update (dt) {
-        this.move(dt);  
+
+    selectOption() {
+        switch (window.OPTION) {
+            case 'hat':
+                this.blade = SimplePool.spawn(PoolType.Blade5, this.Blade.getWorldPosition(), 0);
+                this.fish = SimplePool.spawn(PoolType.Body6, this.node.getWorldPosition(), 0);
+                break;
+            case 'Fish_bandedacher':
+                this.blade = SimplePool.spawn(PoolType.Blade5, this.Blade.getWorldPosition(), 0);
+                this.fish = SimplePool.spawn(PoolType.Body2, this.node.getWorldPosition(), 0);
+                break;
+            case 'x2':
+                this.blade = SimplePool.spawn(PoolType.Blade5, this.Blade.getWorldPosition(), 0);
+                this.fish = SimplePool.spawn(PoolType.Body, this.node.getWorldPosition(), 0);
+                break;
+            case 'x3':
+                this.blade = SimplePool.spawn(PoolType.Blade5, this.Blade.getWorldPosition(), 0);
+                this.fish = SimplePool.spawn(PoolType.Body3, this.node.getWorldPosition(), 0);
+                break;
+            default:
+                break;
+        }
     }
+    update(dt) {
+        this.move(dt);
+    }
+
 }
