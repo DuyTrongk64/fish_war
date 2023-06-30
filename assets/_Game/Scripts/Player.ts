@@ -71,6 +71,7 @@ export default class Player extends Character {
     }
 
     public onRevive(){
+        UIManager.Ins.onClose(1);
         this.selectOption();
         this.particle.active = true;
 

@@ -94,6 +94,7 @@ export default class joystick extends cc.Component {
     }
     update(dt){
         if(GameManager.Ins.isDead){
+            this.node.active = false;
             this.speedUp.active = false;
         }
     }
