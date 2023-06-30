@@ -75,25 +75,25 @@
         "__id__": 12
       },
       {
-        "__id__": 30
-      },
-      {
-        "__id__": 32
+        "__id__": 31
       },
       {
         "__id__": 25
+      },
+      {
+        "__id__": 33
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 34
-      },
-      {
         "__id__": 35
       },
       {
         "__id__": 36
+      },
+      {
+        "__id__": 37
       }
     ],
     "_prefab": null,
@@ -640,7 +640,7 @@
       "array": [
         0,
         0,
-        510.0889628290344,
+        342.18828767032636,
         0,
         0,
         0,
@@ -868,6 +868,9 @@
     "_enabled": true,
     "stick": {
       "__id__": 14
+    },
+    "speedUp": {
+      "__id__": 18
     },
     "max_r": 130,
     "_id": "59VsLcEdlFl6aMqPvKdH/G"
@@ -1129,7 +1132,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Player",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 2
     },
@@ -1139,12 +1142,15 @@
       },
       {
         "__id__": 27
+      },
+      {
+        "__id__": 29
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 29
+        "__id__": 30
       }
     ],
     "_prefab": null,
@@ -1419,6 +1425,64 @@
     "_id": "65uFMXEclJUqpSjWwFpRv0"
   },
   {
+    "__type__": "cc.Node",
+    "_name": "Hat",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 25
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 158,
+      "height": 134
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -19.595,
+        130.851,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "23fSBN0xZG8ZxwxXAvxDqT"
+  },
+  {
     "__type__": "3174bPFBSZGgoQwxWbjOlUs",
     "_name": "",
     "_objFlags": 0,
@@ -1434,6 +1498,12 @@
     "Blade": {
       "__id__": 26
     },
+    "Hat": {
+      "__id__": 29
+    },
+    "particle": {
+      "__id__": 27
+    },
     "_id": "1aG+YV0+ZNkJ4vYRPA2O8r"
   },
   {
@@ -1447,7 +1517,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 31
+        "__id__": 32
       }
     ],
     "_prefab": null,
@@ -1503,7 +1573,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 30
+      "__id__": 31
     },
     "_enabled": true,
     "pools": [
@@ -1722,6 +1792,15 @@
         "prefab": {
           "__uuid__": "b08f9ed2-b948-47fd-b822-8cbd08c3a27f"
         }
+      },
+      {
+        "amount": 1,
+        "root": {
+          "__id__": 25
+        },
+        "prefab": {
+          "__uuid__": "a93766fb-ca0b-4767-9dac-01aec9fe07e0"
+        }
       }
     ],
     "_id": "1cZXXUcYdGvptE2Qg/GuIC"
@@ -1737,7 +1816,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 33
+        "__id__": 34
       }
     ],
     "_prefab": null,
@@ -1763,8 +1842,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -1002.996,
-        -700.674,
+        0,
+        0,
         0,
         0,
         0,
@@ -1793,12 +1872,21 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 32
+      "__id__": 33
     },
     "_enabled": true,
+    "camera": {
+      "__id__": 12
+    },
     "prefabs": [
       {
         "__uuid__": "1f581a7d-3c18-4dc2-9813-4ce06f3ea84e"
+      },
+      {
+        "__uuid__": "8a99b766-ea09-494e-bdaf-8a1c5ff323f8"
+      },
+      {
+        "__uuid__": "ee4c0a1f-8875-4163-b8fb-a6e83385ad85"
       }
     ],
     "_id": "83EK9h9lRHP6YkLg773qIB"
@@ -1856,7 +1944,7 @@
     },
     "_enabled": true,
     "player": {
-      "__id__": 29
+      "__id__": 30
     },
     "_id": "6dwn5At5tFx4SuhNS+Hbkh"
   }
