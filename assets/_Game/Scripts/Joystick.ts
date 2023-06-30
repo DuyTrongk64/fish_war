@@ -8,6 +8,9 @@ export default class joystick extends cc.Component {
     @property(cc.Node)
     stick: cc.Node = null;
 
+    @property(cc.Node)
+    speedUp: cc.Node = null;
+
     @property
     max_r: number = 0;
     
@@ -89,5 +92,9 @@ export default class joystick extends cc.Component {
         this.isActive = false; 
         this.node.active = false;
     }
-
+    update(dt){
+        if(GameManager.Ins.isDead){
+            this.speedUp.active = false;
+        }
+    }
 }

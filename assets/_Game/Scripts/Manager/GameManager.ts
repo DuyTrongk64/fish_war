@@ -104,7 +104,10 @@ export default class GameManager extends cc.Component {
 
   start() {
     this.player.onAwake();
-    this.waitAndExecute(() => this.startSpawnEnemies(), 5500);
+    if(this.player.isStart){
+      this.startSpawnEnemies();
+    }
+    else this.waitAndExecute(() => this.startSpawnEnemies(), 5500);
 
   }
 

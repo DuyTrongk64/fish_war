@@ -1,8 +1,8 @@
-import Character from './Character'
-import CacheComponent from "./CacheComponent";
-import PoolControl from "./Pool/PoolControl";
-import PoolMember from "./Pool/PoolMember";
-import SimplePool from "./Pool/SimplePool";
+import Character from '../Character'
+import CacheComponent from "../CacheComponent";
+import PoolControl from "../Pool/PoolControl";
+import PoolMember from "../Pool/PoolMember";
+import SimplePool from "../Pool/SimplePool";
 const { ccclass, property } = cc._decorator;
 
 @ccclass

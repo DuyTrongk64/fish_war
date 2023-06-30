@@ -29,6 +29,7 @@ export enum PoolType {
     Meat1 = 30,
     Meat2 = 31,
     Bone  = 32,
+    Hat = 33,
 }
 
 @ccclass

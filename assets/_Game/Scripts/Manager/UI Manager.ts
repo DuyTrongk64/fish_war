@@ -1,57 +1,60 @@
-const {ccclass, property} = cc._decorator;
- 
+const { ccclass, property } = cc._decorator;
+
 @ccclass
 export default class UIManager extends cc.Component {
 
+    @property(cc.Node)
+    camera: cc.Node = null;
     // singleton
-    private static ins : UIManager;
-    public static get Ins() : UIManager
-    {
-       return UIManager.ins;
+    private static ins: UIManager;
+    public static get Ins(): UIManager {
+        return UIManager.ins;
     }
- 
+
     protected onLoad(): void {
         UIManager.ins = this;
 
-        for (let i = 0; i < this.prefabs.length; i++){
+        for (let i = 0; i < this.prefabs.length; i++) {
             this.roots[i] = new cc.Node();
-            this.roots[i].setParent(this.node);
+            this.roots[i].setParent(this.node.parent);
         }
     }
     //------------------------------------
-    
+
     // open UI theo index, UI nào thứ tự càng cao thì layer càng cao
     // close UI cũng theo index luôn
     // UI có nút bấm nào thì nên tạo 1 function rồi kéo thả vào trong này, ví dụ như ấn end card button
 
     // prefab để show ui lên
     @property([cc.Prefab])
-    prefabs : cc.Node[] = [];
+    prefabs: cc.Node[] = [];
 
     //list roots node để show layer theo đúng thứ tự mong muốn
-    roots : cc.Node[] = [];
+    //@property(cc.Node)
+    roots: cc.Node[] = [];
 
     //list canvas để lấy link
-    canvas : cc.Node[] = [];
+    canvas: cc.Node[] = [];
 
     //open theo index
-    public onOpen(index: number){
-        if(this.canvas[index] == null) {
+    public onOpen(index: number) {
+        if (this.canvas[index] == null) {
             this.canvas[index] = cc.instantiate(this.prefabs[index]);
             this.canvas[index].setParent(this.roots[index]);
+            this.canvas[index].setPosition(this.camera.getPosition());
         }
 
         this.canvas[index].active = true;
     }
 
     //close theo index
-    public onClose(index: number){
-        if(this.canvas[index] != null){
+    public onClose(index: number) {
+        if (this.canvas[index] != null) {
             this.canvas[index].active = false;
         }
     }
 
-    public endcardButton(){
+    public endcardButton() {
 
     }
 }

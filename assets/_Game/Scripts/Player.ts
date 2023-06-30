@@ -18,21 +18,35 @@ export default class Player extends Character {
     @property(cc.Node)
     Blade: cc.Node = null;
 
+    @property(cc.Node)
+    Hat: cc.Node = null;
+
+    @property(cc.Node)
+    particle: cc.Node = null;
+
+    public isStart: boolean;
+    private isMoving: boolean;
+
     private blade: PoolMember;
     private fish: PoolMember;
-    private isMoving: boolean;
+    private hat: PoolMember = null;
 
     public onAwake() {
         this.selectOption();
         UIManager.Ins.onOpen(0);
+        UIManager.Ins.onOpen(2);
     }
 
     public onStart(){
+        this.isStart = true;
+
         UIManager.Ins.onClose(0);
+        UIManager.Ins.onClose(2);
     }
     
     onLoad() {
         this.isMoving = false;
+        this.isStart = false;
         GameManager.Ins.point = 0;
     }
 
@@ -42,11 +56,24 @@ export default class Player extends Character {
 
     protected onDeath() {
         GameManager.Ins.isDead = true;
-        // SimplePool.despawn(this.fish);
-        // SimplePool.despawn(this.blade);
-        // SimplePool.spawn(PoolType.Meat1, this.node.getWorldPosition().add(cc.v3(-10,0,0)), 0);
-        // SimplePool.spawn(PoolType.Meat2, this.node.getWorldPosition().add(cc.v3(10,0,0)), 0);
-        // SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0);
+
+        SimplePool.despawn(this.fish);
+        SimplePool.despawn(this.blade);
+        if(this.hat!= null) SimplePool.despawn(this.hat);
+
+        this.particle.active = false;
+
+        SimplePool.spawn(PoolType.Meat1, this.node.getWorldPosition().add(cc.v3(-10,0,0)), 0);
+        SimplePool.spawn(PoolType.Meat2, this.node.getWorldPosition().add(cc.v3(10,0,0)), 0);
+        SimplePool.spawn(PoolType.Bone, this.node.getWorldPosition(), 0);
+
+        UIManager.Ins.onOpen(1);
+    }
+
+    public onRevive(){
+        this.selectOption();
+        this.particle.active = true;
+
     }
 
     public onEat() {
@@ -159,6 +186,7 @@ export default class Player extends Character {
             case 'hat':
                 this.blade = SimplePool.spawn(PoolType.Blade5, this.Blade.getWorldPosition(), 0);
                 this.fish = SimplePool.spawn(PoolType.Body6, this.node.getWorldPosition(), 0);
+                this.hat = SimplePool.spawn(PoolType.Hat, this.Hat.getWorldPosition(), 0);
                 break;
             case 'Fish_bandedacher':
                 this.blade = SimplePool.spawn(PoolType.Blade5, this.Blade.getWorldPosition(), 0);
